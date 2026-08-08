@@ -9,12 +9,16 @@
     "build": "electron-vite build",
     "preview": "electron-vite preview",
     "postinstall": "electron-rebuild -f -w better-sqlite3",
-    "rebuild:natives": "electron-rebuild -f -w better-sqlite3"
+    "rebuild:natives": "electron-rebuild -f -w better-sqlite3",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "pino": "^9.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1"
@@ -26,10 +30,14 @@
     "@types/express": "^4.17.21",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
     "@vitejs/plugin-react": "^4.3.4",
     "electron": "^34.0.0",
     "electron-vite": "^3.0.0",
+    "eslint": "^9.18.0",
     "typescript": "^5.7.2",
-    "vite": "^6.0.6"
+    "vite": "^6.0.6",
+    "vitest": "^3.0.0"
   }
 }
